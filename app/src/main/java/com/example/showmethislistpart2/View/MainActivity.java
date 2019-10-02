@@ -7,26 +7,27 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.showmethislistpart2.R;
-import com.example.showmethislistpart2.SMTPart2.SMTLP_Adopter;
+import com.example.showmethislistpart2.SMTPart2.SMTLP_Adaptor;
 import com.example.showmethislistpart2.Utils;
 
 public class MainActivity extends AppCompatActivity {
-        private RecyclerView rvPeople;
-        private SMTLP_Adopter SMTLP_Adopter;
+
+        private RecyclerView rv_People;
+        private SMTLP_Adaptor recyclerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        rvPeople = findViewById(R.id.rvpeople);
+        rv_People = findViewById(R.id.rvpeople);
 
         // Finish setting up recyclerview
-        rvPeople.setLayoutManager(new LinearLayoutManager(this));
-        rvPeople.setHasFixedSize(true);
+        rv_People.setLayoutManager(new LinearLayoutManager(this));
+        rv_People.setHasFixedSize(true);
 
         // Init people adapter
-        SMTLP_Adopter = new SMTLP_Adopter(Utils.get());
-        rvPeople.setAdapter(SMTLP_Adopter);
+        recyclerAdapter = new SMTLP_Adaptor(Utils.getList());
+        rv_People.setAdapter(recyclerAdapter);
 
     }
 }

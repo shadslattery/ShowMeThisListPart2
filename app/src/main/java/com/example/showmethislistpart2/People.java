@@ -8,8 +8,8 @@ public class People {
     private String email;
     private String phoneNumber;
 
-    public People(String FName, String LName, String Email, String Phone){
-        this.firstName = FName;
+    public People(String FirstName, String LName, String Email, String Phone){
+        this.firstName = FirstName;
         this.lastName = LName;
         this.email = Email;
         this.phoneNumber = Phone;
